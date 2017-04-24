@@ -1,0 +1,35 @@
+<div class="row" ng-controller="CrudCtrl as crud">
+	<div class="col-md-12">
+		<form name="formNewUser">
+			<div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+				<label for="name">Nome</label>
+				<input type="text" class="form-control" name="name" placeholder="Nome" ng-model="crud.name" ng-minlength="5" ng-maxlength="50" required>
+				<p ng-show="formNewUser.name.$error.minlength" class="help-block">Nome muito curto.</p>
+                <p ng-show="formNewUser.name.$error.maxlength" class="help-block">Nome muito longo.</p>
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" class="form-control" name="email" placeholder="Email" ng-model="crud.email" required>
+				<p ng-show="formNewUser.email.$invalid && !formNewUser.email.$pristine" class="help-block">Digite um email válido.</p>
+			</div>
+			<div class="form-group">
+				<label for="pass">Senha</label>
+				<input type="password" class="form-control" name="pass" placeholder="Senha" ng-model="crud.password" ng-minlength="8" ng-maxlength="16" required>
+				<p ng-show="formNewUser.pass.$error.minlength" class="help-block">Sua senha deve conter pelo menos 8 caracteres.</p>
+                <p ng-show="formNewUser.pass.$error.maxlength" class="help-block">Sua senha não deve conter mais que 16 caracteres.</p>
+			</div>
+			<div class="form-group">
+				<label for="profiles">Perfil</label>
+				<select class="form-control" name="profiles" ng-model="crud.profiles" ng-options="item as item.value for item in items" required>
+					<option value="">Escolha um perfil</option>
+				</select>
+				<p ng-show="formNewUser.profiles.$error.required" class="help-block"></p>
+			</div>
+			<button type="submit" class="btn btn-primary" ng-click="crud.newUser()" ng-disabled="formNewUser.$invalid">Enviar</button>
+			<br><br><br>
+			<p>
+				{{msg}}
+			</p>
+		</form>
+	</div>
+</div>

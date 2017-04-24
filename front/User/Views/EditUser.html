@@ -1,0 +1,35 @@
+<!--<div class="row" ng-controller="CrudCtrl as editUser">
+	<div class="col-md-12">-->
+		<form ng-controller="CrudCtrl as crud" name="formEdit">
+			<div class="form-group">
+				<label for="name">Nome</label>
+				<input type="text" class="form-control" name="name" placeholder="Nome" ng-model="user.name" ng-minlength="5" ng-maxlength="50" required>
+				<p ng-show="formEdit.name.$error.minlength" class="help-block">Nome muito curto.</p>
+                <p ng-show="formEdit.name.$error.maxlength" class="help-block">Nome muito longo.</p>
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" class="form-control" name="email" placeholder="Email" ng-model="user.email" required>
+				<p ng-show="formEdit.email.$invalid && !formEdit.email.$pristine" class="help-block">Digite um email válido.</p>
+			</div>
+			<div class="form-group">
+				<label for="pass">Senha</label>
+				<input type="password" class="form-control" name="pass" placeholder="xxxxxxxxxxxx" ng-model="user.password" ng-minlength="8" ng-maxlength="16" required>
+				<p ng-show="formEdit.pass.$error.minlength" class="help-block">Sua senha deve conter pelo menos 8 caracteres.</p>
+                <p ng-show="formEdit.pass.$error.maxlength" class="help-block">Sua senha não deve conter mais que 16 caracteres.</p>
+			</div>
+			<div class="form-group">
+				<label for="profiles">Perfil</label>
+				<select class="form-control" name="profiles" ng-model="crud.profiles" ng-options="item as item.value for item in items" required>
+					<option value="">Escolha um perfil</option>
+				</select>
+				<p ng-show="formEdit.profiles.$error.required" class="help-block"></p>
+			</div>
+			<button type="submit" class="btn btn-primary" ng-click="crud.edit(user.id)" ng-disabled="formEdit.$invalid">Enviar</button>
+			<br><br><br>
+			<p>
+				{{msg}}
+			</p>
+		</form>
+	<!--</div>
+</div>-->

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="libs/css/bootstrap.css" rel="stylesheet" />
+    <link href="libs/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="libs/css/style.css" rel="stylesheet" />
+    
+    <!--Jasmine Framework-->
+    <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine-html.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/boot.min.js"></script>-->
+
+
+    <script src="libs/js/bootstrap.min.js"></script>
+    <script src="libs/js/bootstrap.js"></script>
+    <script src="libs/js/js.js"></script>
+  </head>
+  <body ng-app="myApp">
+    <div ui-view>
+    </div>
+
+    <!-- angular js -->
+    <script src="libs/js/angular/angular/angular.min.js"></script>
+    <!--ui-router-->
+    <script src="libs/js/angular/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <!-- angular mocks -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.4/angular-mocks.js"></script>
+
+    <!--Arquivos do modulo login-->
+    <script type="text/javascript" src="Login/login.module.js"></script>
+    <script type="text/javascript" src="Login/login.routes.js"></script>
+
+    <!--Arquivos do modulo user-->
+    <script type="text/javascript" src="User/user.module.js"></script>
+    <script type="text/javascript" src="User/user.routes.js"></script>
+
+    <!--Arquivos do modulo syslog-->
+    <script type="text/javascript" src="Syslog/syslog.module.js"></script>
+    <script type="text/javascript" src="Syslog/syslog.routes.js"></script>
+
+    <!--Controllers-->
+    <script type="text/javascript" src="Login/Controllers/LoginCtrl.js"></script>
+    <script type="text/javascript" src="User/Controllers/UserCtrl.js"></script>
+    <script type="text/javascript" src="User/Controllers/CrudCtrl.js"></script>
+    <script type="text/javascript" src="Syslog/Controllers/SyslogCtrl.js"></script>
+
+    <!--Controllers for tests-->
+    <script type="text/javascript" src="Login/Controllers/LoginCtrl.spec.js"></script>
+
+  
+    <script type="text/javascript" src="libs/js/angular/jquery/dist/jquery.min.js"></script>
+    <!--arquivo de conf angular global-->
+    <script src="myApp.js"></script>
+
+  </body>
+</html>

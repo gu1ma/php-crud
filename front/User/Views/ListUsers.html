@@ -1,0 +1,50 @@
+<div class="row" ng-controller="CrudCtrl as crud">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Lista de usuários cadastrados</h2>
+				<div class="col-md-10">
+					Buscar: <input type="text" ng-model="name">
+				</div>
+				<div class="col-md-2">
+					<button type="button" class="btn btn-primary btn-lg" ng-click="newUser = !newUser">Novo usuário</button>
+				</div>
+				<div ng-show="newUser">
+					<div ng-include="'User/Views/NewUser.html'"></div>
+				</div>
+		</div>
+	</div>
+	<br><br><br>
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table" ng-init="crud.getAllUsers()">
+				<tr>
+					<td>ID</td>
+					<td>Email</td>
+					<td>Nome</td>
+					<td>Data de criação</td>
+					<td>Data do último login</td>
+					<td>Perfil</td>
+					<td>Ações</td>
+					<td></td>
+				</tr>
+				<tr ng-repeat-start="user in crud.users | filter:name">
+					<td>{{user.id}}</td>
+					<td>{{user.email}}</td>
+					<td>{{user.name}}</td>
+					<td>{{user.dateCreation}}</td>
+					<td>{{user.dateLastLogin}}</td>
+					<td>{{user.profile}}</td>
+					<td>
+						<button type="button" class="btn btn-warning" ng-click="edit = user.id">Editar</button>
+					</td>
+					<td><button type="button" class="btn btn-danger" ng-click="crud.delete(user.id)">Excluir</button></td>
+				</tr>
+				<tr ng-repeat-end="">
+					<td colspan="8" ng-if="user.id === edit">
+						<div ng-include="'User/Views/EditUser.html'"></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
