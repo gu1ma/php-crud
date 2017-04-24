@@ -1,0 +1,25 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "description": "Aplicacao frontend",
+  "main": "myApp.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine": "^2.5.3",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.4.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://tatooine.aker.com.br/gabriel.silva/treinamento-php"
+  },
+  "author": "Gabriel Guimaraes",
+  "license": "ISC"
+}

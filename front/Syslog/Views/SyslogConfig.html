@@ -1,0 +1,35 @@
+<div class="row" ng-controller="SyslogCtrl as syslog" ng-init="syslog.getStatus()">
+	<div class="row">
+		<div class="col-md-12">
+			<h2 class="page-header">Configurações Syslog</h2>
+		</div>
+		<div class="col-md-4">
+			<button type="button" class="btn btn-success" ng-click="syslog.initSyslog()">Iniciar syslog</button>
+			<button type="button" class="btn btn-danger" ng-click="syslog.stopSyslog()">Parar syslog</button>
+		</div>
+		<div class="col-md-8">
+			<h4>Status do Syslog: {{syslogStatus}}</h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<button type="button" class="btn btn-success" ng-click="mongoForm = !mongoForm">Editar configurações</button>
+		</div>
+		<div class="col-md-8">
+			<h4>Banco: {{database}}<br>Collection: {{collection}}</h4>
+		</div>
+		<div class="col-md-12" ng-show="mongoForm">
+			<form class="form-inline">
+				<div class="form-group">
+					<label for="bancoMongo">Banco</label>
+					<input type="text" class="form-control" placeholder="Digite o nome do Banco" id="bancoMongo" ng-model="database">
+				</div>
+				<div class="form-group">
+					<label for="collectionMongo">Collection</label>
+					<input type="text" id="collectionMongo" class="form-control" placeholder="Digite o nome da Collection" ng-model="collection">
+				</div>
+				<button type="button" class="btn btn-success" ng-click="syslog.sendMongoConfig()">Enviar</button>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,27 @@
+<div class="row">
+	<div class="col-md-12">
+	     <center>
+	     	<h1>PÁGINA DE LOGIN</h1>
+	    </center>
+	</div>
+</div>
+<div class="row" ng-controller="LoginCtrl as login">
+	<br><br><br>
+	<div class="col-md-12" style="padding-left:15%;padding-right:15%" >
+	  <form name="formLogin">
+	   		<div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+	   			<label for="user">Usuário</label>
+   				<input type="email" class="form-control" name="user" placeholder="Usuário" ng-model="login.user" required>
+   				<small class="form-text text-muted"><i>O seu usuário é o seu endereço de email</i></small>
+               <p ng-show="formLogin.user.$invalid && !formLogin.user.$pristine" class="help-block">Digite um email válido.</p>
+   			</div>
+   			<div class="form-group">
+   				<label for="pass">Senha</label>
+   				<input type="password" class="form-control" name="pass" placeholder="Senha" ng-model="login.password" ng-minlength="8" ng-maxlength="16" required>
+               <p ng-show="formLogin.pass.$error.minlength" class="help-block">Senha muito curta.</p>
+               <p ng-show="formLogin.pass.$error.maxlength" class="help-block">Senha muito longa.</p>
+   			</div>
+   			<button type="submit" class="btn btn-primary" ng-disabled="formLogin.$invalid" ng-click="login.send()">Enviar</button>
+   	</form>
+   </div>
+</div> 
