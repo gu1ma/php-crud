@@ -1,0 +1,17 @@
+{
+    "require": {
+        "silex/silex": "~2.0",
+        "twig/twig": "^1.28",
+	"propel/propel": "~2.0@dev",
+        "mongodb/mongodb": "~1.0",
+        "symfony/validator": "^3.2",
+        "phpunit/phpunit": "3.7.*",
+        "php-mock/php-mock": "^0.8.0",
+        "guzzlehttp/guzzle": "^6.1"
+    },
+    "autoload":{
+	"psr-4":{
+	    "":"src"	
+	}
+    }
+}
