@@ -1,0 +1,42 @@
+@version: 3.5
+@include "/etc/syslog-ng/scl.conf"
+@include "`scl-root`/system/tty10.conf"
+
+# Syslog-ng configuration file, compatible with default Debian syslog
+# installation.
+
+# First, set some global options.
+options { chain_hostnames(off); flush_lines(0); use_dns(no); use_fqdn(no);
+	  owner("root"); group("adm"); perm(0640); stats_freq(0);
+	  bad_hostname("^gconfd$");
+};
+
+source s_src {
+       system();
+       internal();
+};
+
+destination d_mongodb_user{
+    mongodb(
+	servers("localhost:27017")
+	database("syslog")
+	collection("user")
+	value-pairs(
+	    scope("selected-macros" "nv-pairs" "sdata")
+	)        
+    );
+};
+
+########################
+# Filters
+########################
+#filter f_debug { level(debug) and not facility(auth, authpriv, news, mail); };
+#filter f_user { facility(user) and not filter(f_debug); };
+
+#Mongo
+log { source(s_src); destination(d_mongodb_user); };
+
+###
+# Include all config files in /etc/syslog-ng/conf.d/
+###
+@include "/etc/syslog-ng/conf.d/*.conf"
