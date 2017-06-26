@@ -1,5 +1,5 @@
 describe('Teste do modulo login da aplicacao',function(){
-	var scope, http, state, controller, url = 'http://localhost/treinamentophp/back/web/index.php/';
+	var scope, http, state, controller, url = 'http://localhost/php-crud-project/back/web/index.php/';
 	var Users;
 
 	beforeEach(angular.mock.module('login'));

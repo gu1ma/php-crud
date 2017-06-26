@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    var url = 'http://localhost/treinamentophp/back/web/index.php/';
+    var url = 'http://localhost/php-crud-project/back/web/index.php/';
 
     angular
         .module('user')
