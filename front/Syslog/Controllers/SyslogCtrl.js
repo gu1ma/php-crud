@@ -30,7 +30,7 @@
                 $scope.syslogStatus = data.statusMessage;
             })
             .error(function(data, status, headers, config) {
-                //$scope.syslogStatus = data;
+                alert('Houve um erro ao tentar executar o comando!');
             });
         }
 
@@ -60,8 +60,7 @@
                 alert(data.statusMessage);
             })
             .error(function(data, status, headers, config) {
-                var win = window.open('', 'printwindow');
-                win.document.write(data);
+                alert('Houve um erro ao tentar atualizar banco!');
             });
         }
 

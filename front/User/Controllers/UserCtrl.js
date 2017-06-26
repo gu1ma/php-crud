@@ -23,8 +23,7 @@
                 }
         		})
         		.error(function(data) {
-          		  var win = window.open('', 'printwindow');
-              	win.document.write(data);
+          		  alert('Houve um erro ao tentar efetuar logout!');
         		});
         }
 
@@ -40,9 +39,8 @@
                    }
   			       })
   			       .error(function(data) {
-  			      	var win = window.open('', 'printwindow');
-                win.document.write(data);
-  			    }); 
+    			      	alert('Houve um erro ao tentar verificar login!');
+  			       }); 
 		    }       
     }
 })();

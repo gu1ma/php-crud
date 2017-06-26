@@ -27,9 +27,7 @@
                     }
 	      		})
 	      		.error(function(data) {
-		            var win = window.open('', 'printwindow');
-		            win.document.write(data);
-		            //alert(data);
+		            alert('Houve um erro ao tentar logar!');
 	      		});
         }
     }

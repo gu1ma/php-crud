@@ -41,8 +41,7 @@
                 } 
             }).
             error(function(data) {
-                var win = window.open('', 'printwindow');
-                win.document.write(data);
+                alert('Houve um erro ao tentar criar novo usuário!');
             });
         }
 
@@ -78,8 +77,7 @@
                 
             }).
             error(function(data, status, headers, config) {
-                var win = window.open('', 'printwindow');
-                win.document.write(data);  
+                alert('Houve um erro ao tentar editar usuário!');
             });
             
         }
@@ -95,8 +93,7 @@
                 }              
             })
             .error(function(data) { 
-                var win = window.open('', 'printwindow');
-                win.document.write(data);              
+                alert('Houve um erro ao tentar deletar usuário!');              
             });
         }
 	}       
