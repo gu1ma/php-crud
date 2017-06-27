@@ -28,5 +28,5 @@ Creating database
 mysql -u root -p (key enter + root password)
 create database php_crud_project;
 create user 'php-project'@'localhost' identified by 'phpcrud';
-grant all privileges on *. * to 'php-project';
+grant all privileges on php_crud_project.* to 'php-project'@'localhost';
 ```
