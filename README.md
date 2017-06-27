@@ -9,7 +9,7 @@ First, install:
 Apache2 - sudo apt-get install apache2
         - sudo apt-get install libapache2-mod-php7.0
 PHP 7 - sudo apt-get install php7.0
-      - sudo apt install php7.0-dev
+      - sudo apt-get install php7.0-dev
 Driver PDO - sudo apt-get install php7.0-mysql
 MySQL - sudo apt-get install mysql-server
 MongoDB - sudo apt-get install mongodb
