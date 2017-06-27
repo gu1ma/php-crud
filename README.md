@@ -30,3 +30,10 @@ create database php_crud_project;
 create user 'php-project'@'localhost' identified by 'phpcrud';
 grant all privileges on php_crud_project.* to 'php-project'@'localhost';
 ```
+
+Creating sql and models with propel, 
+```
+cd php-crud-project/back/vendor/propel/propel/bin
+./propel sql:build
+./propel model:build
+```
