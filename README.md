@@ -22,3 +22,11 @@ Now, on folder of your project backend(php-crud-project/back), run:
 composer install --ignore-platform-reqs
 ```
 
+Creating database
+
+```
+mysql -u root -p (key enter + root password)
+create database php_crud_project;
+create user 'php-project'@'localhost' identified by 'phpcrud';
+grant all privileges on *. * to 'php-project';
+```
